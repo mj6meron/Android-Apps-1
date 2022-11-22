@@ -4,34 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/wall"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:background="#1c1c1c"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="15dp"
         android:layout_marginTop="15dp"
+        android:padding="15dp"
         android:text="Hey! This is Meron"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:layout_margin="15dp"
-        android:padding="15dp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Click and generate a random sentence about me!"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        android:textStyle="bold"
         android:layout_margin="15dp"
         android:padding="15dp"
+        android:text="Click and generate a random sentence about me!"
         android:textAlignment="center"
-        />
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
 
     <Button
@@ -39,10 +37,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:padding="5dp"
         android:backgroundTint="#32770C"
-        android:textStyle="bold"
-        android:text="Generate" />
+        android:padding="5dp"
+        android:text="Generate"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/generatedText"
@@ -50,28 +48,21 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:padding="15dp"
+        android:text=""
+        android:textAlignment="center"
         android:textColor="#4CAF50"
-        android:background="#010101"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:text="A simple generated text"
-        android:textAlignment="center"
 
         />
 
-
-
-    <TextView
-        android:layout_width="wrap_content"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="175dp"
-        android:text="Thanks!"
-        android:padding="13dp"
-        android:textColor="@color/lightGrey"
-        android:textSize="11sp"
-        android:textStyle="bold"
-        />
-
+        android:layout_margin="10dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/messi" />
 
 
 </LinearLayout>

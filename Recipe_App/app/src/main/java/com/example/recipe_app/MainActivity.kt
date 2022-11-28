@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
             generatedName2.text = recipes[0].name2
             generatedDetails.text = recipes[0].details
             topDiv.setBackgroundResource(R.drawable.image_gwyneth)
-
         }
 
         button2.setOnClickListener {

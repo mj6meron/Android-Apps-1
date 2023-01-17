@@ -3,6 +3,7 @@ package com.example.recipe_app
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -52,46 +53,81 @@ class MainActivity : AppCompatActivity() {
             topDiv.setBackgroundResource(R.drawable.image_fluffy)
         }
     }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("MainActivity", "onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("MainActivity", "onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("MainActivity", "onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("MainActivity", "onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("MainActivity", "onDestroy")
+    }
 }
 
 
 // Regarding data and populating it
-data class Recipe(var name: String = "",
-                  var name2: String = "",
-                  var details: String = "",
-                  var imageId: String = "")
+data class Recipe(
+    var name: String = "",
+    var name2: String = "",
+    var details: String = "",
+    var imageId: String = ""
+)
 
 fun populateData(): ArrayList<Recipe> {
-    val gwyneth = Recipe("Gwyneth’s Dad’s “World Famous” Pancakes",
+    val gwyneth = Recipe(
+        "Gwyneth’s Dad’s “World Famous” Pancakes",
         "The Pretty Good Pancake That Ultimately Fell Flat",
         "Though Gwyneth’s dad may seem like an unlikely pick for a pancake recipe," +
                 " we were intrigued that his pancakes are adapted from Joy of Cooking. " +
                 "The bulk of the batter gets mixed up the night before, " +
                 "and it makes a huge batch that cook up pretty thin. ",
-        "image_gwyneth")
-    val martha = Recipe ( "Martha Stewart’s Old Fashioned Pancake Recipe",
+        "image_gwyneth"
+    )
+    val martha = Recipe(
+        "Martha Stewart’s Old Fashioned Pancake Recipe",
         "The Easy-But-Kinda-Boring Pantry Pancake",
         "Martha Stewart’s Old Fashioned Pancakes can probably be pulled off from ingredients in your pantry, " +
                 "making it a great weekday recipe. It’s super-simple and solid, " +
                 "but is it special? Nope. Is it light and fluffy? " +
                 "Not especially. Does it get tasty pancakes on the table? Absolutely.",
-        "image_martha")
-    val arthur = Recipe ("King Arthur Flour’s Simply Perfect Pancake",
+        "image_martha"
+    )
+    val arthur = Recipe(
+        "King Arthur Flour’s Simply Perfect Pancake",
         "The Best Diner-Style Pancake",
         "These pancakes have a lot going for them. You’ll whip together the whole eggs and milk," +
                 " which makes for a lofty pancake without the fuss of separating and " +
                 "whipping egg whites first thing in the morning. " +
                 "They’re also distinctly flavorful, thanks to the addition of malted milk powder. ",
-        "image_arthur")
-    val fluffy = Recipe("Serious Eats’ Light and Fluffy Pancakes",
+        "image_arthur"
+    )
+    val fluffy = Recipe(
+        "Serious Eats’ Light and Fluffy Pancakes",
         "The Absolute Best Pancake Recipe",
         "We love and stand by Kitchn’s own Lofty Pancake recipe, " +
                 "which includes folding whipped egg whites into the batter. " +
                 "Even though this recipe is a little fussy, the smart addition of sour cream" +
                 " made for a really special pancake that is more than worth the effort.",
-        "image_fluffy")
+        "image_fluffy"
+    )
 
-    return arrayListOf( gwyneth, martha, arthur, fluffy)
+    return arrayListOf(gwyneth, martha, arthur, fluffy)
 }
 
 
